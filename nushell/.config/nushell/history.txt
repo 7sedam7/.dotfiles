@@ -1,0 +1,123 @@
+ls
+eza
+ls | where size > 1kib
+export XDG_CONFIG_HOME='~/.config'
+$env
+brew
+brew install starship
+ls .cache/
+ls -lah .cache
+ls .
+ls -lah
+ls
+eza
+eza -lah
+eza -lah .config/
+eza -lah .cache/
+nvim .cache/starship/
+starship init nu | save -f ~/.cache/starship/init.nu
+use ~/.cache/starship/init.nu
+ls
+nvim .xonshrc
+nu
+exit
+rm ~/.xonshrc
+$nu.config-path
+nvim .config/nushell/config.nu
+ls
+ls github/dotfiles-latest/
+eza
+eza -lah github/
+eza -lah github/dotfiles-latest/
+nvim github/dotfiles-latest/starship-config/
+nvim ~/.zshrc
+ls
+nvim ~/.config/nushell/env.nu
+ls
+ls --all
+ls -a
+tree
+ls raycast/
+ls -a raycast/
+ls -a raycast/.config/
+cd ..
+pwd
+ls -a
+ls -l
+ls 
+ls -lah
+ls -la
+ls -la .config/
+start .config/
+rm -rf .config/wezterm/
+brew install stow
+stow wezterm
+pwd
+cd .dotfiles/
+ls
+stow wezterm
+stow -D
+stow -D wezterm/
+mkdir bin
+nvim bin/stow.sh
+rm -rf ~/.config/raycast/
+chmod +x bin/stow.sh
+./bin/stow.sh
+pwd
+git init .
+git status
+brew list
+brew bundle dump
+ls -la
+nvim Brewfile
+rm Brewfile
+brew bundle dump --describe
+nvim Brewfile
+ls -la
+nvim README.md
+git status
+git add .
+git status
+git commit -m 'Initial setup'
+git status
+git remote add origin git@github.com:7sedam7/dotfiles.git<\n>git branch -M main<\n>git push -u origin main
+pwd
+ls -la
+nvim .zshrc
+ls -la github/
+nvim .gitconfig
+cp -p .gitconfig .dotfiles/git/
+mkdir .dotfiles/git
+cp .gitconfig .dotfiles/git/
+cd .dotfiles/
+git status
+git add .
+git commit -m 'Added git and updated readme'
+git push origin main
+ls -la
+ls -la ..
+ls -la ../Notes/
+ls -la ../.ssh/
+ls -la
+cd raycast/
+ls -la
+rm -rf .config/
+ls -la
+git status
+git add .
+git status
+git commit -m 'Fixed Raycast'
+git push origin main
+$nu.env-path
+cd ..
+git pull origin mainn
+cd .dotfiles/
+git pull origin main
+cd ..
+rm -rf .dotfiles/
+git clone git@github.com:7sedam7/.dotfiles.git
+mkdir .dotfiles/nushell
+mkdir .dotfiles/nushell/.config
+z .dotfiles/
+git status
+git diff

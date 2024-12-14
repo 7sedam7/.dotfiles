@@ -1,1 +1,1 @@
-stow ssh wezterm git zsh
+stow ssh wezterm nushell git zsh
