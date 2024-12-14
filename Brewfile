@@ -24,6 +24,8 @@ brew "speedtest-cli"
 brew "stow"
 # Internet file retriever
 brew "wget"
+# zoxide is a smarter cd command, inspired by z and autojump.
+brew "zoxide"
 # Password manager that keeps all passwords secure behind one password
 cask "1password"
 # Chromium based browser
