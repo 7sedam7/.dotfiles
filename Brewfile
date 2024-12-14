@@ -2,7 +2,7 @@ tap "homebrew/bundle"
 tap "homebrew/services"
 tap "koekeishiya/formulae"
 # Command-line fuzzy finder written in Go
-# brew "fzf"
+brew "fzf"
 # GitHub command-line tool
 # brew "gh"
 # Open source programming language to build simple/reliable/efficient software
