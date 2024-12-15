@@ -10,8 +10,10 @@ brew "eza"
 brew "starship"
 # GitHub command-line tool
 # brew "gh"
+# asdf alternative vritten in rust (universal package manager for any language)
+brew "mise"
 # Open source programming language to build simple/reliable/efficient software
-brew "go"
+# brew "go"
 # Tools and libraries to manipulate images in many formats
 # brew "imagemagick"
 # Simple terminal UI for git commands
