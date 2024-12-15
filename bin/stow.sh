@@ -1,1 +1,1 @@
-stow ssh wezterm nushell starshhip git zsh
+stow ssh wezterm nushell starshhip git zsh nvim
