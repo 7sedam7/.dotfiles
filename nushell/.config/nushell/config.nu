@@ -147,7 +147,7 @@ let light_theme = {
 
 # The default config record. This is where much of your global configuration is setup.
 $env.config = {
-    show_banner: true # true or false to enable or disable the welcome banner at startup
+    show_banner: false # true or false to enable or disable the welcome banner at startup
 
     ls: {
         use_ls_colors: true # use the LS_COLORS environment variable to colorize output
@@ -241,7 +241,7 @@ $env.config = {
     buffer_editor: null # command that will be used to edit the current line buffer with ctrl+o, if unset fallback to $env.VISUAL and $env.EDITOR
     use_ansi_coloring: true
     bracketed_paste: true # enable bracketed paste, currently useless on windows
-    edit_mode: emacs # emacs, vi
+    edit_mode: vi # emacs, vi
     shell_integration: {
         # osc2 abbreviates the path if in the home_dir, sets the tab/window title, shows the running command in the tab/window title
         osc2: true
@@ -898,7 +898,21 @@ $env.config = {
     ]
 }
 
-# use ~/.cache/starship/init.nu
+# Custom config
+alias l = ls -al
+alias lt = eza --tree --level=2 --long --icons --git
+alias v = nvim
 
-# Zoxide
+# Git
+alias gc = git commit -m
+alias gca = git commit -a -m
+alias gp = git push origin HEAD
+alias gpu = git pull origin
+alias gs = git status
+alias gd = git diff
+alias ga. = git add .
+
+source ~/.config/nushell/env.nu
 source ~/.zoxide.nu
+# source ~/.cache/carapace/init.nu
+use ~/.cache/starship/init.nu

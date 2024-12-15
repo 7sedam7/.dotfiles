@@ -3,6 +3,11 @@ tap "homebrew/services"
 tap "koekeishiya/formulae"
 # Command-line fuzzy finder written in Go
 brew "fzf"
+# eza is a modern alternative for the venerable file-listing command-line
+# program ls
+brew "eza"
+# The minimal, blazing-fast, and infinitely customizable prompt for any shell!
+brew "starship"
 # GitHub command-line tool
 # brew "gh"
 # Open source programming language to build simple/reliable/efficient software
