@@ -46,5 +46,8 @@ installed run bin/stow.sh script
 ```
 
 ## Extra
+Nvim uses nvchad and my config is in /lua/chadrc.lua and /config/lspconfig.lua
+
 Plex server config not included.
+
 Libation is not on homebrew. (used for fetching my audible library)
