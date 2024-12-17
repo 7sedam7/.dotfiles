@@ -12,7 +12,7 @@ Salt & Pipar split keyboard
 ## Settup git
 ```
 # generate ssh key
-ssh-keygen -t ed25519 -C "7sedam7@gmail.com"
+ssh-keygen -t ed25519 -C "<your email>"
 
 # Add generated key to keychain
 ssh-add --apple-use-keychain ~/.ssh/id_ed25519
