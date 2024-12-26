@@ -45,6 +45,11 @@ installed run bin/stow.sh script
 ./bin/stow.sh
 ```
 
+## Nvim dev
+### Rust
+Run `:MasonInstall rust-analyzer`
+Run `:MasonInstall codelldb`
+
 ## Extra
 Nvim uses nvchad and my config is in /lua/chadrc.lua and /config/lspconfig.lua
 

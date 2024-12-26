@@ -57,6 +57,7 @@ cask "hiddenbar"
 cask "obsidian"
 # Home media player
 cask "plex"
+cask "plexamp"
 # Control your tools with a few keystrokes
 cask "raycast"
 # RØDE companion app
