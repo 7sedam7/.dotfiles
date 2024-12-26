@@ -21,7 +21,7 @@ map(
 	"<cmd>lua require'dap'.set_breakpoint(vim.fn.input('Breakpoint condition: '))<CR>",
 	{ desc = "Debugger set conditional breakpoint" }
 )
-map("n", "<Leader>de", "<cmd>lua require'dap'.terminate()<CR>", { desc = "Debugger reset" })
+map("n", "<Leader>dx", "<cmd>lua require'dap'.terminate()<CR>", { desc = "Debugger terminate" })
 map("n", "<Leader>dr", "<cmd>lua require'dap'.run_last()<CR>", { desc = "Debugger run last" })
 
 -- rustaceanvim
