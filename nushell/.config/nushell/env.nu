@@ -114,3 +114,5 @@ $env.STARSHIP_CONFIG = '~/.config/starship/starship.toml'
 
 let mise_path = $nu.default-config-dir | path join mise.nu
 ^mise activate nu | save $mise_path --force
+
+$env.EDITOR = 'nvim'

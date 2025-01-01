@@ -3,6 +3,7 @@ tap "homebrew/services"
 tap "koekeishiya/formulae"
 # Command-line fuzzy finder written in Go
 brew "fzf"
+brwe "fd"
 # eza is a modern alternative for the venerable file-listing command-line
 # program ls
 brew "eza"
@@ -66,3 +67,5 @@ cask "rode-central"
 cask "skype"
 # GPU-accelerated cross-platform terminal emulator and multiplexer
 cask "wezterm"
+
+cask "yazi"
