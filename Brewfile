@@ -69,3 +69,5 @@ cask "skype"
 cask "wezterm"
 
 cask "yazi"
+# Microsoft cloud storage
+cask "onedrive"
