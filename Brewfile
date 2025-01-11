@@ -3,7 +3,8 @@ tap "homebrew/services"
 tap "koekeishiya/formulae"
 # Command-line fuzzy finder written in Go
 brew "fzf"
-brwe "fd"
+brew "fd"
+brew "bat"
 # eza is a modern alternative for the venerable file-listing command-line
 # program ls
 brew "eza"
@@ -34,6 +35,9 @@ brew "stow"
 brew "wget"
 # zoxide is a smarter cd command, inspired by z and autojump.
 brew "zoxide"
+
+
+###### CASKS ########
 # Password manager that keeps all passwords secure behind one password
 cask "1password"
 # Chromium based browser
