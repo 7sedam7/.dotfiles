@@ -56,3 +56,7 @@ Nvim uses nvchad and my config is in /lua/chadrc.lua and /config/lspconfig.lua
 Plex server config not included.
 
 Libation is not on homebrew. (used for fetching my audible library)
+
+## Aider
+Config is loaded from dir where you run Aider, so the `.env` needs to be coppied to where you want to run it.
+Deepseek API key needs to be added. (Or some other model configured)

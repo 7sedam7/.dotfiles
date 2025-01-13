@@ -35,6 +35,10 @@ brew "stow"
 brew "wget"
 # zoxide is a smarter cd command, inspired by z and autojump.
 brew "zoxide"
+# Terminal file manager
+brew "yazi"
+# AI pair programming
+brew "aider"
 
 
 ###### CASKS ########
@@ -71,7 +75,5 @@ cask "rode-central"
 cask "skype"
 # GPU-accelerated cross-platform terminal emulator and multiplexer
 cask "wezterm"
-
-cask "yazi"
 # Microsoft cloud storage
 cask "onedrive"
