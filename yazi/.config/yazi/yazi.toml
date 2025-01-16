@@ -6,3 +6,8 @@ linemode     = 'size'
 [preview]
 max_width       = 1600
 max_height      = 2048
+
+[flavor]
+use = "tokyo-night"
+# For Yazi 0.4 and above
+dark = "tokyo-night"
