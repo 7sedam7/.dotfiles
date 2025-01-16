@@ -903,11 +903,12 @@ alias l = ls -al
 alias lt = eza --tree --level=2 --long --icons --git
 alias v = nvim
 alias cat = bat
+alias aider = aider --chat-mode ask
 
 # Git
 alias gc = git commit -m
 alias gca = git commit -a -m
-alias gp = git push origin HEAD
+alias gpm = git push origin main
 alias gpu = git pull origin
 alias gs = git status
 alias gd = git diff
