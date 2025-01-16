@@ -902,6 +902,7 @@ $env.config = {
 alias l = ls -al
 alias lt = eza --tree --level=2 --long --icons --git
 alias v = nvim
+alias cat = bat
 
 # Git
 alias gc = git commit -m
