@@ -14,7 +14,8 @@ end
 -- config.default_prog = { "/opt/homebrew/bin/nu" }
 
 -- For example, changing the color scheme:
-config.color_scheme = "Catppuccin Macchiato"
+-- config.color_scheme = "Catppuccin Macchiato"
+config.color_scheme = 'Tokyo Night'
 config.font = wezterm.font("JetBrains Mono NL")
 config.font_size = 16
 
