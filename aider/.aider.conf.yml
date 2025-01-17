@@ -1,0 +1,38 @@
+# MODEL
+# model: azure/gpt-4o
+model: codestral/codestral-latest
+# model: deepseek/deepseek-coder
+
+set-env:
+ - AZURE_API_VERSION=2024-08-01-preview
+ - AZURE_API_BASE=https://7seda-m5zngwf8-eastus2.cognitiveservices.azure.com
+ # - AZURE_API_KEY=
+ # - DEEPSEEK_API_KEY=
+ # - CODESTRAL_API_KEY=
+
+# Model aliases
+alias:
+ - ag4o:azure/gpt-4o
+ - dc:deepseek/deepseek-coder
+ - mc:codestral/codestral-latest
+
+dark-mode: true
+code-theme: material
+
+# git: false
+auto-commits: false
+dirty-commits: false
+
+# check-update: true
+# multiline: true
+editor: nvim
+vim: true
+
+# input-history-file: .aider.input.history
+# chat-history-file: .aider.chat.history.md
+# restore-chat-history: false
+
+yes-always: false
+verbose: false
+
+edit-format: ask

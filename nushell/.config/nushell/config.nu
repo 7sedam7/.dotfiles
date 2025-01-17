@@ -903,7 +903,6 @@ alias l = ls -al
 alias lt = eza --tree --level=2 --long --icons --git
 alias v = nvim
 alias cat = bat
-alias aider = aider --chat-mode ask
 
 # Git
 alias gc = git commit -m
