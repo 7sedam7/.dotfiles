@@ -36,3 +36,6 @@ yes-always: false
 verbose: false
 
 edit-format: ask
+
+read: ~/.notes/aider_default_instructions.md
+watch-files: true

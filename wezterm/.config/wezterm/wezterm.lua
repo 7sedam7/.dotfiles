@@ -13,6 +13,10 @@ end
 -- Spawn a fish shell in login mode
 -- config.default_prog = { "/opt/homebrew/bin/nu" }
 
+-- Opacity
+config.window_background_opacity = 0.9
+config.macos_window_background_blur = 20
+
 -- For example, changing the color scheme:
 -- config.color_scheme = "Catppuccin Macchiato"
 config.color_scheme = 'Tokyo Night'
