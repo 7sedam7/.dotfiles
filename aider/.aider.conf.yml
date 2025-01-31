@@ -1,7 +1,8 @@
 # MODEL
 # model: azure/gpt-4o
-model: codestral/codestral-latest
+# model: codestral/codestral-latest
 # model: deepseek/deepseek-coder
+model: ollama/qwen2.5-coder:14b
 
 set-env:
  - AZURE_API_VERSION=2024-08-01-preview
@@ -15,6 +16,7 @@ alias:
  - ag4o:azure/gpt-4o
  - dc:deepseek/deepseek-coder
  - mc:codestral/codestral-latest
+ - qc:ollama/qwen2.5-coder:14b
 
 dark-mode: true
 code-theme: material

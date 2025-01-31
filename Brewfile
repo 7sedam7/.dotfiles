@@ -20,15 +20,15 @@ brew "mise"
 # brew "imagemagick"
 # Simple terminal UI for git commands
 # brew "lazygit"
+# Simple terminal UI for docker commands
+# brew "lazydocker"
 brew "neovim"
 # Platform built on V8 to build network applications
 brew "nushell"
 # Create, run, and share large language models (LLMs)
-# brew "ollama"
+brew "ollama"
 # Package compiler and linker metadata toolkit
 brew "speedtest-cli"
-# Cross-shell prompt for astronauts
-# brew "starship"
 # Organize software neatly under a single directory tree (e.g. /usr/local)
 brew "stow"
 # Internet file retriever
@@ -39,6 +39,8 @@ brew "zoxide"
 brew "yazi"
 # AI pair programming
 brew "aider"
+# file/folder archiving tool
+brew p7zip
 
 
 ###### CASKS ########

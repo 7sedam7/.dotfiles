@@ -1,7 +1,11 @@
 [manager]
-show_hidden  = true
-show_symlink = true
-linemode     = 'size'
+sort_by        = 'btime'
+sort_sensitive = false
+sort_reverse   = true
+sort_dir_first = false
+linemode       = 'size'
+show_hidden    = true
+show_symlink   = true
 
 [preview]
 max_width       = 1600
