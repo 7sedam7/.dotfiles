@@ -37,10 +37,13 @@ brew "wget"
 brew "zoxide"
 # Terminal file manager
 brew "yazi"
+# Files archiving tool, yazi uses it aswell
+brew 'p7zip'
 # AI pair programming
 brew "aider"
-# file/folder archiving tool
-brew p7zip
+# Record terminal szession and convert to gif (with agg)
+brew 'asciinema'
+brew 'agg'
 
 
 ###### CASKS ########

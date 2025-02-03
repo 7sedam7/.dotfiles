@@ -1,4 +1,5 @@
 export PATH=$PATH:/Users/jkunst/.local/bin
+export PATH="$HOME/.dotfiles/bin:$PATH"
 
 export PEREC_DIR='~/.notes'
 
