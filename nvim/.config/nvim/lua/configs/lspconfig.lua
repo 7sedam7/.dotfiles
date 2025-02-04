@@ -37,3 +37,13 @@ lspconfig.rust_analyzer.setup({
     }
   }
 })
+
+-- md setup
+lspconfig.marksman.setup({
+  on_attach = nvlsp.on_attach,
+  on_init = nvlsp.on_init,
+  capabilities = nvlsp.capabilities,
+  filetypes = {'markdown'},
+  -- root_dir = '/Users/jkunst/.notes/',
+  root_dir = os.getenv('PEREC_DIR'),
+})

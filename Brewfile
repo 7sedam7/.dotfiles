@@ -46,6 +46,8 @@ brew 'asciinema'
 brew 'agg'
 # CLI media player
 brew 'mpv'
+# cli for mounting volumes (supprots most clound storages)
+brew 'rclone'
 
 
 ###### CASKS ########
