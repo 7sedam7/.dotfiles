@@ -44,6 +44,8 @@ brew "aider"
 # Record terminal szession and convert to gif (with agg)
 brew 'asciinema'
 brew 'agg'
+# CLI media player
+brew 'mpv'
 
 
 ###### CASKS ########
