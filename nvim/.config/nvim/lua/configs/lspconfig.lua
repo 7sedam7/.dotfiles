@@ -44,6 +44,5 @@ lspconfig.marksman.setup({
   on_init = nvlsp.on_init,
   capabilities = nvlsp.capabilities,
   filetypes = {'markdown'},
-  -- root_dir = '/Users/jkunst/.notes/',
-  root_dir = os.getenv('PEREC_DIR'),
+  -- root_dir = os.getenv('PEREC_DIR'),
 })
