@@ -105,11 +105,50 @@ return {
   {
     '7sedam7/perec.nvim',
     dependencies = {
+      -- {
+      --   'nvim-telescope/telescope.nvim',
+      --   event = 'VeryLazy',
+      --   lazy = true,
+      -- }
       -- 'nvim-telescope/telescope.nvim',
       -- 'folke/which-key.nvim' -- optional
     },
     init = function()
       require("perec").setup()
     end,
+  },
+  {
+    "github/copilot.vim",
+    lazy = false,
+    config = function()
+      -- Mapping tab is already used by NvChad
+      vim.g.copilot_no_tab_map = true;
+      vim.g.copilot_assume_mapped = true;
+      vim.g.copilot_tab_fallback = "";
+      -- The mapping is set to other key, see custom/lua/mappings
+      -- or run <leader>ch to see copilot mapping section
+    end
+  },
+  {
+    "yetone/avante.nvim",
+    event = "VeryLazy",
+    lazy = false,
+    dependencies = {
+      "nvim-tree/nvim-web-devicons",
+      "stevearc/dressing.nvim",
+      "nvim-lua/plenary.nvim",
+      "MunifTanjim/nui.nvim",
+      {
+        "MeanderingProgrammer/render-markdown.nvim",
+        opts = {
+          file_types = { "markdown", "Avante" },
+          -- pipe_table = { enabled = false },
+          -- checxkbox = { enabled = false },
+        },
+        ft = { "markdown", "Avante" },
+      },
+    },
+    -- build = "make",
+    opts = { provider = "copilot", model = "anthropic:claude-3-5-sonnet" },
   },
 }
