@@ -50,6 +50,9 @@ installed run bin/stow.sh script
 Run `:MasonInstall rust-analyzer`
 Run `:MasonInstall codelldb`
 
+### Lua
+Run `cargo install stylua`
+
 ## Extra
 Nvim uses nvchad and my config is in /lua/chadrc.lua and /config/lspconfig.lua
 

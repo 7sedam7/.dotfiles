@@ -42,3 +42,11 @@ function OpenMarkedFiles()
     }):find()
 end
 map("n", "<Leader>hh", OpenMarkedFiles, { desc = "Search marked files" })
+
+-- Create an autocommand to format on save
+vim.api.nvim_create_autocmd("BufWritePre", {
+  pattern = { "*.lua" },
+  callback = function(args)
+    require("conform").format({ async = false, lsp_fallback = true })
+  end,
+})

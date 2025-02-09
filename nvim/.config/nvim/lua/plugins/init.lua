@@ -103,7 +103,7 @@ return {
     end,
   },
   {
-    '7sedam7/perec.nvim',
+    "7sedam7/perec.nvim",
     init = function()
       require("perec").setup()
     end,
@@ -113,18 +113,18 @@ return {
     lazy = false,
     config = function()
       -- Mapping tab is already used by NvChad
-      vim.g.copilot_no_tab_map = true;
-      vim.g.copilot_assume_mapped = true;
-      vim.g.copilot_tab_fallback = "";
+      vim.g.copilot_no_tab_map = true
+      vim.g.copilot_assume_mapped = true
+      vim.g.copilot_tab_fallback = ""
       -- The mapping is set to other key, see custom/lua/mappings
       -- or run <leader>ch to see copilot mapping section
-    end
+    end,
   },
   {
     "supermaven-inc/supermaven-nvim",
     lazy = false,
     config = function()
-      require("supermaven-nvim").setup({
+      require("supermaven-nvim").setup {
         -- keymaps = {
         --   accept_suggestion = "<Right>",
         --   clear_suggestion = "<C-]>",
@@ -132,8 +132,8 @@ return {
         -- },
         -- ignore_filetypes = { markdown = true },
         disable_inline_completion = true, -- disables inline completion for use with cmp
-      })
-      table.insert(require("cmp").get_config().sources, { name = 'supermaven' })
+      }
+      table.insert(require("cmp").get_config().sources, { name = "supermaven" })
     end,
   },
   {
