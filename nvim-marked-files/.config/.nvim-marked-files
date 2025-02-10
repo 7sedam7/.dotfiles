@@ -1,3 +1,7 @@
 ~/.dotfiles/nvim/.config/nvim/lua/plugins/init.lua
 ~/.dotfiles/nvim/.config/nvim/lua/mappings.lua
 ~/.dotfiles/nvim-marked-files/.config/.nvim-marked-files
+~/.notes/docs/my-work.md
+~/.notes/docs/krafna.md
+~/.notes/docs/flexibility.md
+~/.notes/aider_default_instructions.md
