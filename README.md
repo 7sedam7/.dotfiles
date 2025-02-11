@@ -53,6 +53,9 @@ Run `:MasonInstall codelldb`
 ### Lua
 Run `cargo install stylua`
 
+### Markdown
+Run `:MasonInstall marksman`
+
 ## Extra
 Nvim uses nvchad and my config is in /lua/chadrc.lua and /config/lspconfig.lua
 
