@@ -178,4 +178,8 @@ return {
       }
     end,
   },
+  {
+    "nanotee/zoxide.vim",
+    lazy = false,
+  },
 }
