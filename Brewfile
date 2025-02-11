@@ -1,6 +1,7 @@
 tap "homebrew/bundle"
 tap "homebrew/services"
 tap "koekeishiya/formulae"
+tap "7sedam7/krafna"
 # Command-line fuzzy finder written in Go
 brew "fzf"
 brew "fd"
@@ -48,6 +49,8 @@ brew 'agg'
 brew 'mpv'
 # cli for mounting volumes (supprots most clound storages)
 brew 'rclone'
+# Dataview alternative
+brew 'krafna'
 
 
 ###### CASKS ########
