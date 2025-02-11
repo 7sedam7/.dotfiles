@@ -902,6 +902,7 @@ alias l = ls -al
 alias lt = eza --tree --level=2 --long --icons --git
 alias v = nvim
 alias cat = bat
+alias trackpad-connect = blueutil --connect 10-94-bb-ab-5f-9b
 
 # Git
 alias gc = git commit -m

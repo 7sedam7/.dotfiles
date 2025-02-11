@@ -51,6 +51,8 @@ brew 'mpv'
 brew 'rclone'
 # Dataview alternative
 brew 'krafna'
+# bluetooth utils
+brew 'blueutil'
 
 
 ###### CASKS ########
