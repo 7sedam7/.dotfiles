@@ -47,6 +47,19 @@ return {
         dap = {
           adapter = cfg.get_codelldb_adapter(codelldb_path, liblldb_path),
         },
+        server = {
+          cmd = function()
+            if mason_registry.is_installed "rust-analyzer" then
+              -- This may need to be tweaked depending on the operating system.
+              local ra = mason_registry.get_package "rust-analyzer"
+              local ra_filename = ra:get_receipt():get().links.bin["rust-analyzer"]
+              return { ("%s/%s"):format(ra:get_install_path(), ra_filename or "rust-analyzer") }
+            else
+              -- global installation
+              return { "rust-analyzer" }
+            end
+          end,
+        },
       }
     end,
   },
@@ -120,28 +133,31 @@ return {
       -- or run <leader>ch to see copilot mapping section
     end,
   },
-  {
-    "supermaven-inc/supermaven-nvim",
-    lazy = false,
-    config = function()
-      require("supermaven-nvim").setup {
-        -- keymaps = {
-        --   accept_suggestion = "<Right>",
-        --   clear_suggestion = "<C-]>",
-        --   accept_word = "<Down>",
-        -- },
-        -- ignore_filetypes = { markdown = true },
-        disable_inline_completion = true, -- disables inline completion for use with cmp
-      }
-      table.insert(require("cmp").get_config().sources, { name = "supermaven" })
-    end,
-  },
+  -- {
+  --   "supermaven-inc/supermaven-nvim",
+  --   lazy = false,
+  --   config = function()
+  --     require("supermaven-nvim").setup {
+  --       -- keymaps = {
+  --       --   accept_suggestion = "<Right>",
+  --       --   clear_suggestion = "<C-]>",
+  --       --   accept_word = "<Down>",
+  --       -- },
+  --       -- ignore_filetypes = { markdown = true },
+  --       disable_inline_completion = true, -- disables inline completion for use with cmp
+  --     }
+  --     table.insert(require("cmp").get_config().sources, { name = "supermaven" })
+  --   end,
+  -- },
   {
     "MeanderingProgrammer/render-markdown.nvim",
     opts = {
       file_types = { "markdown" },
       -- pipe_table = { enabled = false },
       -- checxkbox = { enabled = false },
+      -- code = {
+      --   disable_background = { "diff", "krafna" },
+      -- },
     },
     ft = { "markdown" },
   },

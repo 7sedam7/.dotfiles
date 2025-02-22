@@ -53,6 +53,8 @@ brew 'rclone'
 brew 'krafna'
 # bluetooth utils
 brew 'blueutil'
+# Draw images in terminal
+brew 'chafa'
 
 
 ###### CASKS ########

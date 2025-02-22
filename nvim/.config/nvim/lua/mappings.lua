@@ -55,3 +55,6 @@ vim.api.nvim_create_autocmd("BufWritePre", {
 
 -- Outline
 -- map("n", "<leader>o", "<cmd>Outline<CR>", { desc = "Toggle Outline" })
+
+-- Search symbols
+map("n", "<leader>ss", "<cmd>Telescope lsp_document_symbols<CR>", { desc = "Search symbols" })
