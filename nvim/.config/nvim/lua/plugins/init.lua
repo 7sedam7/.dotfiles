@@ -157,7 +157,14 @@ return {
     },
     -- See Commands section for default commands if you want to lazy load on them
     init = function()
-      require("CopilotChat").setup()
+      require("CopilotChat").setup {
+        mappings = {
+          reset = {
+            normal = "<C-x>",
+            insert = "<C-x>",
+          },
+        },
+      }
     end,
   },
   {
@@ -172,28 +179,6 @@ return {
     },
     ft = { "markdown" },
   },
-  -- {
-  --   "yetone/avante.nvim",
-  --   event = "VeryLazy",
-  --   lazy = false,
-  --   dependencies = {
-  --     "nvim-tree/nvim-web-devicons",
-  --     "stevearc/dressing.nvim",
-  --     "nvim-lua/plenary.nvim",
-  --     "MunifTanjim/nui.nvim",
-  --     {
-  --       "MeanderingProgrammer/render-markdown.nvim",
-  --       opts = {
-  --         file_types = { "markdown", "Avante" },
-  --         -- pipe_table = { enabled = false },
-  --         -- checxkbox = { enabled = false },
-  --       },
-  --       ft = { "markdown", "Avante" },
-  --     },
-  --   },
-  --   -- build = "make",
-  --   opts = { provider = "copilot", model = "anthropic:claude-3-5-sonnet" },
-  -- },
   {
     "hedyhli/outline.nvim",
     init = function()
