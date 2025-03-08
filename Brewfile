@@ -93,3 +93,5 @@ cask "skype"
 cask "wezterm"
 # Microsoft cloud storage
 cask "onedrive"
+# Voice to text
+cask "superwhisper"

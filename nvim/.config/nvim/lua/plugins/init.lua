@@ -117,6 +117,8 @@ return {
   },
   {
     "7sedam7/perec.nvim",
+    dir = "~/repos/perec",
+    dev = true,
     init = function()
       require("perec").setup()
     end,
@@ -133,22 +135,31 @@ return {
       -- or run <leader>ch to see copilot mapping section
     end,
   },
-  -- {
-  --   "supermaven-inc/supermaven-nvim",
-  --   lazy = false,
-  --   config = function()
-  --     require("supermaven-nvim").setup {
-  --       -- keymaps = {
-  --       --   accept_suggestion = "<Right>",
-  --       --   clear_suggestion = "<C-]>",
-  --       --   accept_word = "<Down>",
-  --       -- },
-  --       -- ignore_filetypes = { markdown = true },
-  --       disable_inline_completion = true, -- disables inline completion for use with cmp
-  --     }
-  --     table.insert(require("cmp").get_config().sources, { name = "supermaven" })
-  --   end,
-  -- },
+  {
+    "CopilotC-Nvim/CopilotChat.nvim",
+    dependencies = {
+      -- { "github/copilot.vim" }, -- or zbirenbaum/copilot.lua
+      { "nvim-lua/plenary.nvim", branch = "master" }, -- for curl, log and async functions
+    },
+    build = "make tiktoken", -- Only on MacOS or Linux
+    opts = {
+      -- See Configuration section for options
+    },
+    keys = {
+      { "<leader>ac", ":CopilotChatToggle<CR>", mode = "n", desc = "Toggle CopilotChat" },
+      { "<leader>ac", ":CopilotChatToggle<CR>", mode = "v", desc = "Toggle CopilotChat" },
+      { "<leader>ae", ":CopilotChatExplain<CR>", mode = "v", desc = "Explain selected code" },
+      { "<leader>ar", ":CopilotChatReview<CR>", mode = "v", desc = "Review selected code" },
+      { "<leader>ad", ":CopilotChatDocs<CR>", mode = "v", desc = "Generate docs for selected code" },
+      { "<leader>am", ":CopilotChatModels<CR>", mode = "n", desc = "Select model" },
+      { "<leader>at", ":CopilotChatTests<CR>", mode = "v", desc = "Generate tests for selected code" },
+      -- fix, optimize, test
+    },
+    -- See Commands section for default commands if you want to lazy load on them
+    init = function()
+      require("CopilotChat").setup()
+    end,
+  },
   {
     "MeanderingProgrammer/render-markdown.nvim",
     opts = {

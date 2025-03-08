@@ -58,3 +58,17 @@ vim.api.nvim_create_autocmd("BufWritePre", {
 
 -- Search symbols
 map("n", "<leader>ss", "<cmd>Telescope lsp_document_symbols<CR>", { desc = "Search symbols" })
+
+-- Development
+local function unload_project(modname)
+  for k, _ in pairs(package.loaded) do
+    if k:find("^" .. modname .. "[.]*") then
+      package.loaded[k] = nil
+    end
+  end
+end
+vim.keymap.set("n", "<leader>rr", function()
+  unload_project "perec"
+  -- Reload your plugin's init.lua
+  vim.cmd("source " .. vim.fn.expand "~/repos/perec/lua/perec/init.lua")
+end, { desc = "Reload Project" })
