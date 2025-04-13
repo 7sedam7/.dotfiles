@@ -26,3 +26,6 @@ vim.api.nvim_create_autocmd("FileType", {
     vim.opt_local.foldlevel = 99
   end,
 })
+
+-- Enable virtual lines for diagnostics
+vim.diagnostic.config { virtual_text = true, virtual_lines = { only_current_line = true } }

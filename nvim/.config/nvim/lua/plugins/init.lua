@@ -28,41 +28,41 @@ return {
   --    "williamboman/mason.nvim",
   -- },
 
-  {
-    "mrcjkb/rustaceanvim",
-    version = "^5", -- Recommended
-    lazy = false, -- This plugin is already lazy
-    ft = "rust",
-    config = function()
-      local mason_registry = require "mason-registry"
-      local codelldb = mason_registry.get_package "codelldb"
-      local extension_path = codelldb:get_install_path() .. "/extension/"
-      local codelldb_path = extension_path .. "adapter/codelldb"
-      local liblldb_path = extension_path .. "lldb/lib/liblldb.dylib"
-      -- If you are on Linux, replace the line above with the line below:
-      -- local liblldb_path = extension_path .. "lldb/lib/liblldb.so"
-      local cfg = require "rustaceanvim.config"
-
-      vim.g.rustaceanvim = {
-        dap = {
-          adapter = cfg.get_codelldb_adapter(codelldb_path, liblldb_path),
-        },
-        server = {
-          cmd = function()
-            if mason_registry.is_installed "rust-analyzer" then
-              -- This may need to be tweaked depending on the operating system.
-              local ra = mason_registry.get_package "rust-analyzer"
-              local ra_filename = ra:get_receipt():get().links.bin["rust-analyzer"]
-              return { ("%s/%s"):format(ra:get_install_path(), ra_filename or "rust-analyzer") }
-            else
-              -- global installation
-              return { "rust-analyzer" }
-            end
-          end,
-        },
-      }
-    end,
-  },
+  -- {
+  --   "mrcjkb/rustaceanvim",
+  --   version = "^5", -- Recommended
+  --   lazy = false, -- This plugin is already lazy
+  --   ft = "rust",
+  --   config = function()
+  --     local mason_registry = require "mason-registry"
+  --     local codelldb = mason_registry.get_package "codelldb"
+  --     local extension_path = codelldb:get_install_path() .. "/extension/"
+  --     local codelldb_path = extension_path .. "adapter/codelldb"
+  --     local liblldb_path = extension_path .. "lldb/lib/liblldb.dylib"
+  --     -- If you are on Linux, replace the line above with the line below:
+  --     -- local liblldb_path = extension_path .. "lldb/lib/liblldb.so"
+  --     local cfg = require "rustaceanvim.config"
+  --
+  --     vim.g.rustaceanvim = {
+  --       dap = {
+  --         adapter = cfg.get_codelldb_adapter(codelldb_path, liblldb_path),
+  --       },
+  --       server = {
+  --         cmd = function()
+  --           if mason_registry.is_installed "rust-analyzer" then
+  --             -- This may need to be tweaked depending on the operating system.
+  --             local ra = mason_registry.get_package "rust-analyzer"
+  --             local ra_filename = ra:get_receipt():get().links.bin["rust-analyzer"]
+  --             return { ("%s/%s"):format(ra:get_install_path(), ra_filename or "rust-analyzer") }
+  --           else
+  --             -- global installation
+  --             return { "rust-analyzer" }
+  --           end
+  --         end,
+  --       },
+  --     }
+  --   end,
+  -- },
 
   {
     "rust-lang/rust.vim",
@@ -193,5 +193,49 @@ return {
   {
     "nanotee/zoxide.vim",
     lazy = false,
+  },
+  ---@type LazySpec
+  {
+    "mikavilpas/yazi.nvim",
+    event = "VeryLazy",
+    dependencies = {
+      -- check the installation instructions at
+      -- https://github.com/folke/snacks.nvim
+      -- "folke/snacks.nvim"
+    },
+    keys = {
+      -- 👇 in this section, choose your own keymappings!
+      {
+        "<leader>yf",
+        mode = { "n", "v" },
+        "<cmd>Yazi<cr>",
+        desc = "Open yazi at the current file",
+      },
+      {
+        -- Open in the current working directory
+        "<leader>yd",
+        "<cmd>Yazi cwd<cr>",
+        desc = "Open the file manager in nvim's working directory",
+      },
+      {
+        "<leader>yr",
+        "<cmd>Yazi toggle<cr>",
+        desc = "Resume the last yazi session",
+      },
+    },
+    ---@type YaziConfig | {}
+    opts = {
+      -- if you want to open yazi instead of netrw, see below for more info
+      open_for_directories = false,
+      keymaps = {
+        show_help = "<f1>",
+      },
+    },
+    -- 👇 if you use `open_for_directories=true`, this is recommended
+    init = function()
+      -- More details: https://github.com/mikavilpas/yazi.nvim/issues/802
+      -- vim.g.loaded_netrw = 1
+      vim.g.loaded_netrwPlugin = 1
+    end,
   },
 }

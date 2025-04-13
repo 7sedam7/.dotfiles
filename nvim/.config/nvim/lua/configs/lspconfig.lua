@@ -2,10 +2,10 @@
 require("nvchad.configs.lspconfig").defaults()
 
 local lspconfig = require "lspconfig"
-local util = require 'lspconfig/util'
+local util = require "lspconfig/util"
 
 -- EXAMPLE
-local servers = { "html", "cssls", "gopls" }
+local servers = { "html", "cssls", "gopls", "svelte-language-serve" }
 local nvlsp = require "nvchad.configs.lspconfig"
 
 -- lsps with default config
@@ -24,25 +24,25 @@ end
 --   capabilities = nvlsp.capabilities,
 -- }
 --
-lspconfig.rust_analyzer.setup({
+lspconfig.rust_analyzer.setup {
   on_attach = nvlsp.on_attach,
   capabilities = nvlsp.capabilities,
-  filetypes = {'rust'},
-  root_dir = util.root_pattern('Cargo.toml'),
+  filetypes = { "rust" },
+  root_dir = util.root_pattern "Cargo.toml",
   settings = {
-    ['rust-analyzer'] = {
+    ["rust-analyzer"] = {
       cargo = {
         allFeatures = true,
-      }
-    }
-  }
-})
+      },
+    },
+  },
+}
 
 -- md setup
-lspconfig.marksman.setup({
+lspconfig.marksman.setup {
   on_attach = nvlsp.on_attach,
   on_init = nvlsp.on_init,
   capabilities = nvlsp.capabilities,
-  filetypes = {'markdown'},
+  filetypes = { "markdown" },
   -- root_dir = os.getenv('PEREC_DIR'),
-})
+}
