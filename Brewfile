@@ -40,6 +40,7 @@ brew "zoxide"
 brew "yazi"
 # Files archiving tool, yazi uses it aswell
 brew 'p7zip'
+# cargo install ouch
 # AI pair programming
 brew "aider"
 # Record terminal szession and convert to gif (with agg)
