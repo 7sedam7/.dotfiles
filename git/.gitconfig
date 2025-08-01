@@ -6,3 +6,8 @@
 	helper = /usr/local/share/gcm-core/git-credential-manager
 [credential "https://dev.azure.com"]
 	useHttpPath = true
+[credential "https://huggingface.co"]
+	provider = generic
+[credential "azrepos:org/skype"]
+	azureAuthority = https://login.microsoftonline.com/72f988bf-86f1-41af-91ab-2d7cd011db47
+	username = jkunst@microsoft.com

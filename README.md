@@ -3,7 +3,7 @@
 ## Keyboardb
 Salt & Pipar split keyboard
 
-[config](https://zmk.studio/)
+[config](https://zmk.studio/) --> press `ESC` + `'`
 [timeless setup](https://github.com/urob/zmk-config#timeless-homerow-mods) that I did not do yet.
 
 ## Initial setup
