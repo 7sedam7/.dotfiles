@@ -903,6 +903,7 @@ alias lt = eza --tree --level=2 --long --icons --git
 alias v = nvim
 alias cat = bat
 alias trackpad-connect = blueutil --connect 10-94-bb-ab-5f-9b
+alias domain = domain-check
 
 # Git
 alias gc = git commit -m
@@ -929,3 +930,6 @@ def --env y [...args] {
 	}
 	rm -fp $tmp
 }
+
+# Atuin
+source ~/.local/share/atuin/init.nu

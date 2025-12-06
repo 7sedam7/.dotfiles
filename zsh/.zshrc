@@ -10,7 +10,12 @@ source <(fzf --zsh)
 export PATH="/opt/homebrew/opt/llvm@18/bin:$PATH"
 
 export XDG_CONFIG_HOME="${HOME}/.config"
-nu
 
 # opencode
 export PATH="$HOME/.opencode/bin:$PATH"
+
+# SDKMAN
+export SDKMAN_DIR=$(brew --prefix sdkman-cli)/libexec
+[[ -s "${SDKMAN_DIR}/bin/sdkman-init.sh" ]] && source "${SDKMAN_DIR}/bin/sdkman-init.sh"
+
+nu

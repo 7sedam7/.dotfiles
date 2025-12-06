@@ -1,6 +1,12 @@
 -- load defaults i.e lua_lsp
 require("nvchad.configs.lspconfig").defaults()
 
+-- OVERRIDE NvChad's diagnostic defaults
+vim.diagnostic.config {
+  virtual_text = false,
+  virtual_lines = false,
+}
+
 local lspconfig = require "lspconfig"
 local util = require "lspconfig/util"
 
@@ -31,6 +37,9 @@ lspconfig.rust_analyzer.setup {
   root_dir = util.root_pattern "Cargo.toml",
   settings = {
     ["rust-analyzer"] = {
+      diagnostics = {
+        enable = false,
+      },
       cargo = {
         allFeatures = true,
       },
