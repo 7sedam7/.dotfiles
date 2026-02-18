@@ -117,7 +117,7 @@ return {
   },
   {
     "7sedam7/perec.nvim",
-    dir = "~/repos/perec",
+    dir = "~/repos/Krafna/perec",
     dev = true,
     init = function()
       require("perec").setup()
@@ -236,6 +236,18 @@ return {
       -- More details: https://github.com/mikavilpas/yazi.nvim/issues/802
       -- vim.g.loaded_netrw = 1
       vim.g.loaded_netrwPlugin = 1
+    end,
+  },
+  {
+    "rachartier/tiny-inline-diagnostic.nvim",
+    event = "VeryLazy",
+    priority = 1000,
+    config = function()
+      require("tiny-inline-diagnostic").setup()
+      vim.diagnostic.config {
+        virtual_text = false,
+        virtual_lines = false,
+      } -- Disable Neovim's default virtual text diagnostics
     end,
   },
 }

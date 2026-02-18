@@ -59,6 +59,7 @@ brew 'chafa'
 
 
 ###### CASKS ########
+# [Browser Chooser](https://github.com/AlexStrNik/Browserino)
 # Password manager that keeps all passwords secure behind one password
 cask "1password"
 # Chromium based browser

@@ -7,5 +7,20 @@ export PEREC_DIR='~/.notes'
 # Set up fzf key bindings and fuzzy completion
 source <(fzf --zsh)
 
+export PATH="/opt/homebrew/opt/llvm@18/bin:$PATH"
+
 export XDG_CONFIG_HOME="${HOME}/.config"
+
+# opencode
+export PATH="$HOME/.opencode/bin:$PATH"
+
+# SDKMAN
+export SDKMAN_DIR=$(brew --prefix sdkman-cli)/libexec
+[[ -s "${SDKMAN_DIR}/bin/sdkman-init.sh" ]] && source "${SDKMAN_DIR}/bin/sdkman-init.sh"
+
 nu
+
+export PATH="${PATH}:/Users/jkunst/.azureauth/0.9.2"
+
+# Added by Agency Claude Code installer
+export PATH="/Users/jkunst/.claude-cli/currentVersion:$PATH"
