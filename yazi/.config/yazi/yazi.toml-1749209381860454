@@ -1,4 +1,4 @@
-[mgr]
+[manager]
 sort_by        = 'btime'
 sort_sensitive = false
 sort_reverse   = true
