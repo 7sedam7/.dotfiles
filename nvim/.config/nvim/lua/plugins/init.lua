@@ -117,7 +117,7 @@ return {
   },
   {
     "7sedam7/perec.nvim",
-    dir = "~/repos/Krafna/perec",
+    dir = "~/repos/perec",
     dev = true,
     init = function()
       require("perec").setup()

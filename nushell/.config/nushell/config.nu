@@ -931,5 +931,5 @@ def --env y [...args] {
 	rm -fp $tmp
 }
 
-# Atuin
+# Atuin (run `atuin init nu > ~/.local/share/atuin/init.nu` to generate)
 source ~/.local/share/atuin/init.nu

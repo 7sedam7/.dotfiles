@@ -56,6 +56,8 @@ brew 'krafna'
 brew 'blueutil'
 # Draw images in terminal
 brew 'chafa'
+# Shell history sync
+brew 'atuin'
 
 
 ###### CASKS ########

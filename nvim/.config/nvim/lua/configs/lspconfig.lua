@@ -1,40 +1,31 @@
 -- load defaults i.e lua_lsp
 require("nvchad.configs.lspconfig").defaults()
 
+-- ensure Mason-installed servers are on PATH
+vim.env.PATH = vim.fn.stdpath "data" .. "/mason/bin:" .. vim.env.PATH
+
 -- OVERRIDE NvChad's diagnostic defaults
 vim.diagnostic.config {
   virtual_text = false,
   virtual_lines = false,
 }
 
-local lspconfig = require "lspconfig"
-local util = require "lspconfig/util"
-
--- EXAMPLE
-local servers = { "html", "cssls", "gopls", "svelte-language-serve" }
 local nvlsp = require "nvchad.configs.lspconfig"
 
--- lsps with default config
-for _, lsp in ipairs(servers) do
-  lspconfig[lsp].setup {
-    on_attach = nvlsp.on_attach,
-    on_init = nvlsp.on_init,
-    capabilities = nvlsp.capabilities,
-  }
-end
-
--- configuring single server, example: typescript
--- lspconfig.ts_ls.setup {
---   on_attach = nvlsp.on_attach,
---   on_init = nvlsp.on_init,
---   capabilities = nvlsp.capabilities,
--- }
---
-lspconfig.rust_analyzer.setup {
+-- shared config for all LSP servers
+vim.lsp.config("*", {
   on_attach = nvlsp.on_attach,
+  on_init = nvlsp.on_init,
   capabilities = nvlsp.capabilities,
+})
+
+-- servers with default config
+vim.lsp.enable { "html", "cssls", "gopls", "svelte" }
+
+-- rust analyzer
+vim.lsp.config("rust_analyzer", {
   filetypes = { "rust" },
-  root_dir = util.root_pattern "Cargo.toml",
+  root_markers = { "Cargo.toml" },
   settings = {
     ["rust-analyzer"] = {
       diagnostics = {
@@ -45,13 +36,11 @@ lspconfig.rust_analyzer.setup {
       },
     },
   },
-}
+})
+vim.lsp.enable "rust_analyzer"
 
 -- md setup
-lspconfig.marksman.setup {
-  on_attach = nvlsp.on_attach,
-  on_init = nvlsp.on_init,
-  capabilities = nvlsp.capabilities,
+vim.lsp.config("marksman", {
   filetypes = { "markdown" },
-  -- root_dir = os.getenv('PEREC_DIR'),
-}
+})
+vim.lsp.enable "marksman"
