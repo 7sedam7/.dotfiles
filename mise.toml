@@ -1,6 +1,7 @@
 [tools]
 go = "latest"
 npm = "latest"
+node = "latest"
 python = "latest"
 rust = "latest"
 
