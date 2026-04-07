@@ -99,6 +99,7 @@ vim.keymap.set("n", "<leader>fs", function() Snacks.picker.lsp_symbols() end, { 
 vim.keymap.set("n", "<leader>gl", function() Snacks.picker.git_log() end, { desc = "Git log" })
 vim.keymap.set("n", "<leader>gd", function() Snacks.picker.git_diff() end, { desc = "Git diff" })
 vim.keymap.set("n", "<leader>gs", function() Snacks.picker.git_status() end, { desc = "Git status" })
+vim.keymap.set("n", "<leader>fd", function() Snacks.picker.diagnostics() end, { desc = "Diagnostics" })
 vim.keymap.set("n", "<C-t>", function() Snacks.terminal.toggle() end, { desc = "Toggle terminal" })
 vim.keymap.set("t", "<C-t>", function() Snacks.terminal.toggle() end, { desc = "Toggle terminal" })
 
@@ -131,6 +132,7 @@ vim.keymap.set("n", "<C-k>", "<C-w>k")
 vim.keymap.set("n", "<C-l>", "<C-w>l")
 vim.keymap.set("n", ";", ":")
 vim.keymap.set("n", "<leader>cd", "<cmd>CodeDiff<cr>", { desc = "CodeDiff" })
+vim.keymap.set("n", "<leader>e", vim.diagnostic.open_float, { desc = "Line diagnostic" })
 
 -- Flash (motions)
 require("flash").setup()
