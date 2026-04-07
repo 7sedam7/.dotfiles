@@ -14,6 +14,7 @@ vim.pack.add({
   "https://github.com/folke/flash.nvim",
   "https://github.com/nvim-treesitter/nvim-treesitter",
   "https://github.com/mistweaverco/kulala.nvim",
+  "https://github.com/lewis6991/gitsigns.nvim",
 })
 
 -- Local plugin (dev)
@@ -153,6 +154,18 @@ vim.keymap.set("n", "<leader>hr", function() require("kulala").run() end, { desc
 vim.keymap.set("n", "<leader>ha", function() require("kulala").run_all() end, { desc = "Run all requests" })
 vim.keymap.set("n", "<leader>hp", function() require("kulala").jump_prev() end, { desc = "Prev request" })
 vim.keymap.set("n", "<leader>hn", function() require("kulala").jump_next() end, { desc = "Next request" })
+
+-- Gitsigns (git diff in gutter)
+require("gitsigns").setup({
+  on_attach = function(bufnr)
+    local gs = require("gitsigns")
+    local opts = { buffer = bufnr }
+    vim.keymap.set("n", "]h", gs.next_hunk, opts)
+    vim.keymap.set("n", "[h", gs.prev_hunk, opts)
+    vim.keymap.set("n", "<leader>hp", gs.preview_hunk, opts)
+    vim.keymap.set("n", "<leader>hb", gs.blame_line, opts)
+  end,
+})
 
 -- Custom gx for markdown links
 vim.keymap.set("n", "gx", function()
