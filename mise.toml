@@ -1,4 +1,23 @@
 [tools]
 go = "latest"
+npm = "latest"
 python = "latest"
 rust = "latest"
+
+[tasks.nvim-setup]
+description = "Install nvim dependencies (LSPs, tools)"
+run = """
+#!/usr/bin/env bash
+set -e
+
+echo "Installing LSPs..."
+brew install lua-language-server
+npm install -g svelte-language-server
+rustup component add rust-analyzer
+cargo install --locked --git https://github.com/artempyanykh/marksman
+
+echo "Installing treesitter CLI (for parser compilation)..."
+cargo install --locked tree-sitter-cli
+
+echo "Done! Restart nvim to complete setup."
+"""
