@@ -11,13 +11,20 @@ run = """
 set -e
 
 echo "Installing LSPs..."
-brew install lua-language-server
+brew install lua-language-server marksman
 npm install -g svelte-language-server
 rustup component add rust-analyzer
-cargo install --locked --git https://github.com/artempyanykh/marksman
 
 echo "Installing treesitter CLI (for parser compilation)..."
 cargo install --locked tree-sitter-cli
+
+echo "Building blink.cmp fuzzy matcher..."
+BLINK_PATH="$HOME/.local/share/nvim/site/pack/core/opt/blink.cmp"
+if [ -d "$BLINK_PATH" ]; then
+  cd "$BLINK_PATH" && cargo build --release
+else
+  echo "blink.cmp not found - run nvim first, then re-run this task"
+fi
 
 echo "Done! Restart nvim to complete setup."
 """

@@ -27,6 +27,7 @@ vim.cmd.colorscheme("tokyonight")
 require("which-key").setup()
 
 -- Blink completion
+-- Run `mise run nvim-setup` after first launch to build fuzzy matcher
 require("blink.cmp").setup({
   sources = { default = { "lsp", "path", "buffer" } },
   completion = {
