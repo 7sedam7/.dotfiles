@@ -11,8 +11,9 @@ vim.pack.add({
   "https://github.com/mikavilpas/yazi.nvim",
   "https://github.com/esmuellert/codediff.nvim",
   "https://github.com/MeanderingProgrammer/render-markdown.nvim",
-  "https://github.com/mistweaverco/kulala.nvim",
   "https://github.com/folke/flash.nvim",
+  "https://github.com/nvim-treesitter/nvim-treesitter",
+  "https://github.com/mistweaverco/kulala.nvim",
 })
 
 -- Local plugin (dev)
@@ -45,6 +46,7 @@ require("blink.cmp").setup({
 })
 
 -- LSP (native 0.12 config)
+-- brew install lua-language-server
 vim.lsp.config["lua_ls"] = {
   cmd = { "lua-language-server" },
   filetypes = { "lua" },
@@ -53,12 +55,29 @@ vim.lsp.config["lua_ls"] = {
 }
 vim.lsp.enable("lua_ls")
 
+-- cargo install --git https://github.com/artempyanykh/marksman
 vim.lsp.config["marksman"] = {
   cmd = { "marksman", "server" },
   filetypes = { "markdown" },
   root_markers = { ".marksman.toml", ".git" },
 }
 vim.lsp.enable("marksman")
+
+-- rustup component add rust-analyzer (not included by default in rustup)
+vim.lsp.config["rust_analyzer"] = {
+  cmd = { "rust-analyzer" },
+  filetypes = { "rust" },
+  root_markers = { "Cargo.toml", ".git" },
+}
+vim.lsp.enable("rust_analyzer")
+
+-- npm install -g svelte-language-server
+vim.lsp.config["svelte"] = {
+  cmd = { "svelteserver", "--stdio" },
+  filetypes = { "svelte" },
+  root_markers = { "svelte.config.js", "package.json", ".git" },
+}
+vim.lsp.enable("svelte")
 
 -- Render markdown
 require("render-markdown").setup()
@@ -115,6 +134,17 @@ vim.keymap.set("n", "<leader>cd", "<cmd>CodeDiff<cr>", { desc = "CodeDiff" })
 require("flash").setup()
 vim.keymap.set({ "n", "x", "o" }, "s", function() require("flash").jump() end, { desc = "Flash jump" })
 vim.keymap.set({ "n", "x", "o" }, "S", function() require("flash").treesitter() end, { desc = "Flash treesitter" })
+
+-- Treesitter (auto-install parsers)
+-- cargo install --locked tree-sitter-cli (needed to compile some parsers)
+local ok, ts = pcall(require, "nvim-treesitter.configs")
+if ok then
+  ts.setup({
+    ensure_installed = { "rust", "svelte", "javascript", "typescript", "html", "css", "json", "http", "markdown", "markdown_inline" },
+    auto_install = true,
+    highlight = { enable = true },
+  })
+end
 
 -- Kulala (HTTP client)
 require("kulala").setup()
