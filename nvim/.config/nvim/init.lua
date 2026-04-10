@@ -15,6 +15,7 @@ vim.pack.add({
   "https://github.com/nvim-treesitter/nvim-treesitter",
   "https://github.com/mistweaverco/kulala.nvim",
   "https://github.com/lewis6991/gitsigns.nvim",
+  "https://github.com/Saecki/crates.nvim",
 })
 
 -- Local plugin (dev)
@@ -72,6 +73,9 @@ vim.lsp.config["rust_analyzer"] = {
   root_markers = { "Cargo.toml", ".git" },
 }
 vim.lsp.enable("rust_analyzer")
+
+-- Crates (inline version info in Cargo.toml)
+require("crates").setup()
 
 -- npm install -g svelte-language-server
 vim.lsp.config["svelte"] = {
