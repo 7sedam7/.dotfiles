@@ -88,6 +88,13 @@ vim.lsp.enable("svelte")
 -- Render markdown
 require("render-markdown").setup()
 
+-- Format on save (uses LSP formatter if available)
+vim.api.nvim_create_autocmd("BufWritePre", {
+  callback = function()
+    vim.lsp.buf.format({ timeout_ms = 1000 })
+  end,
+})
+
 -- Default LSP keymaps in 0.12: gd, K, gra, grn, grr, grt
 
 -- Snacks
