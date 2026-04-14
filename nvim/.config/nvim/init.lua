@@ -44,7 +44,7 @@ require("blink.cmp").setup({
     preset = "enter",
     ["<Tab>"] = { "select_next", "fallback" },
     ["<S-Tab>"] = { "select_prev", "fallback" },
-    ["<Esc>"] = { "cancel", "fallback" },
+
   },
 })
 
@@ -144,6 +144,7 @@ vim.keymap.set("n", "<C-l>", "<C-w>l")
 vim.keymap.set("n", ";", ":")
 vim.keymap.set("n", "<leader>cd", "<cmd>CodeDiff<cr>", { desc = "CodeDiff" })
 vim.keymap.set("n", "<leader>e", vim.diagnostic.open_float, { desc = "Line diagnostic" })
+vim.keymap.set("n", "<leader>r", "<cmd>source $MYVIMRC<cr>", { desc = "Reload config" })
 
 -- Flash (motions)
 require("flash").setup()
