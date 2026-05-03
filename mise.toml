@@ -27,5 +27,13 @@ else
   echo "blink.cmp not found - run nvim first, then re-run this task"
 fi
 
+echo "Pinning blink.pairs to release tag..."
+PAIRS_PATH="$HOME/.local/share/nvim/site/pack/core/opt/blink.pairs"
+if [ -d "$PAIRS_PATH" ]; then
+  cd "$PAIRS_PATH" && git fetch --tags && git checkout v0.5.0
+else
+  echo "blink.pairs not found - run nvim first, then re-run this task"
+fi
+
 echo "Done! Restart nvim to complete setup."
 """

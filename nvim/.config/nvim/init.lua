@@ -190,10 +190,11 @@ require("gitsigns").setup({
   on_attach = function(bufnr)
     local gs = require("gitsigns")
     local opts = { buffer = bufnr }
-    vim.keymap.set("n", "]h", gs.next_hunk, opts)
-    vim.keymap.set("n", "[h", gs.prev_hunk, opts)
-    vim.keymap.set("n", "<leader>hp", gs.preview_hunk, opts)
-    vim.keymap.set("n", "<leader>hb", gs.blame_line, opts)
+    vim.keymap.set("n", "]h", gs.next_hunk, { buffer = bufnr, desc = "Next hunk" })
+    vim.keymap.set("n", "[h", gs.prev_hunk, { buffer = bufnr, desc = "Prev hunk" })
+    vim.keymap.set("n", "<leader>gp", gs.preview_hunk, { buffer = bufnr, desc = "Preview hunk" })
+    vim.keymap.set("n", "<leader>gb", gs.blame_line, { buffer = bufnr, desc = "Blame line" })
+    vim.keymap.set("n", "<leader>gt", gs.toggle_deleted, { buffer = bufnr, desc = "Toggle deleted" })
   end,
 })
 
