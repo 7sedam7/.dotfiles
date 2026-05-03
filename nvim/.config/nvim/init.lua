@@ -3,7 +3,9 @@ vim.g.mapleader = " "
 -- Plugins
 vim.pack.add({
   "https://github.com/folke/tokyonight.nvim",
-  { src = "https://github.com/saghen/blink.cmp", version = "v1.10.2" },
+  { src = "https://github.com/saghen/blink.cmp",   version = "v1.10.2" },
+  "https://github.com/saghen/blink.lib",
+  { src = "https://github.com/saghen/blink.pairs", version = "v0.5.0" },
   "https://github.com/github/copilot.vim",
   "https://github.com/folke/snacks.nvim",
   "https://github.com/folke/which-key.nvim",
@@ -44,11 +46,25 @@ require("blink.cmp").setup({
     preset = "enter",
     ["<Tab>"] = { "select_next", "fallback" },
     ["<S-Tab>"] = { "select_prev", "fallback" },
-
+    ["<C-b>"] = {},
   },
 })
 
--- LSP (native 0.12 config)
+-- Blink pairs (auto-close brackets, quotes, etc.)
+require("blink.pairs").setup({
+  mappings = {
+    wrap = {
+      ["<C-e>"] = "motion",
+      ["<C-S-e>"] = "motion_reverse",
+    },
+  },
+  highlights = {
+    matchparen = {
+      include_surrounding = true,
+    }
+  }
+})
+
 -- brew install lua-language-server
 vim.lsp.config["lua_ls"] = {
   cmd = { "lua-language-server" },
